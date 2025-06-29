@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="<%= locale %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= film.title %> - StreamFlix</title>
+    <link rel="stylesheet" href="/s/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main class="film-container">
+        <!-- Left Column (2/3 width) -->
+        <div class="player-section">
+            <!-- Video Player -->
+            <div class="video-container">
+                <video controls autoplay>
+                    <source src="<%= film.videoUrl %>" type="video/mp4">
+                    <%= __('Your browser does not support the video tag.') %>
+                </video>
+            </div>
+
+            <!-- Film Info -->
+            <div class="film-info">
+                <h1><%= film.title %></h1>
+                <div class="meta">
+                    <% if (film.year) { %><span><%= film.year %></span><% } %>
+                    <% if (film.rating) { %><span><%= film.rating %></span><% } %>
+                    <% if (film.duration) { %><span><%= film.duration %></span><% } %>
+                </div>
+                <p><%= film.description %></p>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="comments-section">
+                <h2><%= __('Comments') %></h2>
+                <form class="comment-form">
+                    <textarea placeholder="<%= __('Add your comment...') %>"></textarea>
+                    <button type="submit"><%= __('Post Comment') %></button>
+                </form>
+                <div class="comments-list">
+                    <!-- Comments would be loaded here -->
+                    <div class="comment">
+                        <p><strong><%= __('User123') %></strong>: <%= __('Great movie!') %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column (1/3 width) -->
+        <div class="sidebar">
+            <!-- Related Content -->
+            <div class="related-section">
+                <h2><%= __('More Like This') %></h2>
+                <% related.forEach(item => { %>
+                <a href="/d/<%= item.id %>" class="related-item">
+                    <img src="<%= item.thumbnail %>" alt="<%= item.title %>">
+                    <div>
+                        <h3><%= item.title %></h3>
+                        <p><%= item.year %> • <%= item.rating %></p>
+                    </div>
+                </a>
+                <% }) %>
+            </div>
+
+            <!-- Seasons & Episodes (for TV shows) -->
+            <% if (film.seasons) { %>
+            <div class="seasons-section">
+                <h2><%= __('Seasons') %></h2>
+                <select class="season-selector">
+                    <% film.seasons.forEach(season => { %>
+                    <option value="<%= season.number %>">
+                        <%= __('Season') %> <%= season.number %>
+                    </option>
+                    <% }) %>
+                </select>
+                
+                <div class="episodes-list">
+                    <% film.seasons[0].episodes.forEach(episode => { %>
+                    <div class="episode">
+                        <span><%= episode.number %>.</span>
+                        <div>
+                            <h4><%= episode.title %></h4>
+                            <p><%= episode.duration %></p>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </main>
+
+    <%- include('partials/footer') %>
+
+    <script src="/s/script.js"></script>
+</body>
+</html>

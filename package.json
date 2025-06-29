@@ -1,0 +1,21 @@
+{
+  "name": "runwatch",
+  "version": "1.0.0",
+  "description": "Watch and Comment on Shows and Movies have fun :)",
+  "keywords": [
+    "watch"
+  ],
+  "license": "ISC",
+  "author": "Runterya",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "i18n": "^0.15.1"
+  }
+}

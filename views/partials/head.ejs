@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><%=  'RunWatch | ' + title %></title>
+<meta name="description" content="<%= __('Watch unlimited movies and TV shows') %>">
+<link rel="stylesheet" href="/s/style.css">
+<link rel="icon" href="/s/favicon.ico" type="image/x-icon">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="<%= currentUrl %>">
+<meta property="og:title" content="<%= title || 'RunWatch' %>">
+<meta property="og:description" content="<%= __('Watch unlimited movies and TV shows') %>">
+<meta property="og:image" content="/s/images/og-image.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="<%= currentUrl %>">
+<meta property="twitter:title" content="<%= title || 'RunWatch' %>">
+<meta property="twitter:description" content="<%= __('Watch unlimited movies and TV shows') %>">
+<meta property="twitter:image" content="/s/images/og-image.jpg">
+
+<!-- Google AdSense -->
+<% if (adsenseId) { %>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<%= adsenseId %>" crossorigin="anonymous"></script>
+<% } %>

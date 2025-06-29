@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="<%= locale %>">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/s/images/hero-bg.jpg')">
+            <div class="hero-content">
+                <h1><%= __('Unlimited Movies, TV Shows, and More') %></h1>
+                <button><%= __('Watch Now') %></button>
+            </div>
+        </section>
+
+        <!-- Search Bar -->
+        <section class="search-section">
+            <form action="/search" method="get" class="search-form">
+                <input type="text" name="query" placeholder="<%= __('Search for movies, TV shows, and more...') %>" required>
+                <button type="submit"><%= __('Search') %></button>
+            </form>
+
+        <!-- Featured Content -->
+        <section class="content-section">
+            <h2><%= __('Featured') %></h2>
+            <div class="content-grid">
+                <% featured.forEach(item => { %>
+                <a href="/d/<%= item.id %>" class="content-card">
+                    <img src="<%= item.thumbnail %>" alt="<%= item.title %>">
+                    <div class="content-info">
+                        <h3><%= item.title %></h3>
+                        <p><%= item.year %> • <%= item.rating %></p>
+                    </div>
+                </a>
+                <% }) %>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <% categories.forEach(category => { %>
+        <section class="content-section">
+            <h2><%= __(category.name) %></h2>
+            <div class="content-grid">
+                <% category.items.forEach(item => { %>
+                <a href="/d/<%= item.id %>" class="content-card">
+                    <img src="<%= item.thumbnail %>" alt="<%= item.title %>">
+                    <div class="content-info">
+                        <h3><%= item.title %></h3>
+                        <p><%= item.year %> • <%= item.rating %></p>
+                    </div>
+                </a>
+                <% }) %>
+            </div>
+        </section>
+        <% }) %>
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+</html>
