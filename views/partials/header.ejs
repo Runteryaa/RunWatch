@@ -8,10 +8,10 @@
         <!-- Main Navigation -->
         <nav class="main-nav">
             <ul>
-                <li><a href="/" class="<%= currentPath === '/' ? 'active' : '' %>"><%= __('Home') %></a></li>
-                <li><a href="#" class="<%= currentPath.startsWith('/movies') ? 'active' : '' %>"><%= __('Movies') %></a></li>
-                <li><a href="#" class="<%= currentPath.startsWith('/tv') ? 'active' : '' %>"><%= __('TV Shows') %></a></li>
-                <li><a href="#" class="<%= currentPath.startsWith('/new') ? 'active' : '' %>"><%= __('New & Popular') %></a></li>
+                <li><a href="/" class="<%= currentPath === '/' ? 'active' : '' %>"><%= __('home') %></a></li>
+                <li><a href="#" class="<%= currentPath.startsWith('/movies') ? 'active' : '' %>"><%= __('movies') %></a></li>
+                <li><a href="#" class="<%= currentPath.startsWith('/tv') ? 'active' : '' %>"><%= __('tvshows') %></a></li>
+                <li><a href="#" class="<%= currentPath.startsWith('/new') ? 'active' : '' %>"><%= __('newreleases') %></a></li>
             </ul>
         </nav>
 
@@ -31,20 +31,22 @@
 
             <!-- Language Selector -->
             <div class="language-selector">
-                    <span><a href="?lang=en">🇬🇧</a></span>
+                    <span><a href="?lang=en">🇺🇸</a></span>
                     <span><a href="?lang=tr">🇹🇷</a></span>
             </div>
 
             <!-- User Menu -->
+            <% if (typeof user !== 'undefined' && user) { %>
             <div class="user-menu">
-                <button class="user-avatar">
-                    <img src="/s/images/avatar.png" alt="<%= __('User Profile') %>">
-                </button>
-                <ul class="user-dropdown">
-                    <li><a href="/account"><%= __('Account') %></a></li>
-                    <li><a href="/logout"><%= __('Sign Out') %></a></li>
-                </ul>
+                    <img src="/s/avatar.png" %>">
+                    <a href="/profile/<%= user.uid %>/view"><%= __('profile') %></a>
             </div>
+            <% } else { %>
+            <div class="user-menu">
+                <a href="/login" class="btn"><%= __('login') %></a>
+                <a href="/register" class="btn"><%= __('register') %></a>
+            </div>
+            <% } %>
         </div>
     </div>
 </header>

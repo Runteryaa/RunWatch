@@ -1,4 +1,25 @@
 {
   "error.404": "Sayfa Bulunamadı",
-  "page.home": "Ana Sayfa"
+  "navigation": "Gezinti",
+  "home": "Ana Sayfa",
+  "movies": "Filmler",
+  "tvshows": "Diziler",
+  "newreleases": "Yeni Çıkanlar",
+  "legal": "Yasal",
+  "privacy": "Gizlilik Politikası",
+  "terms": "Şartlar ve Koşullar",
+  "cookie": "Çerez Politikası",
+  "help": "Yardım",
+  "faq": "SSS",
+  "contact": "İletişim",
+  "feedback": "Geri Bildirim",
+  "followus": "Bizi Takip Edin",
+  "copyright": "Telif Hakkı",
+  "sitemap": "Site Haritası",
+  "about": "Hakkında",
+  "support": "Destek",
+  "rights": "Tüm hakları saklıdır",
+  "profile": "Profil",
+  "login": "Giriş Yap",
+  "register": "Kayıt Ol"
 }

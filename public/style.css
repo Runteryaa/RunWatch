@@ -1,13 +1,13 @@
 body {
   font-family: "Arial", sans-serif;
-  background-color: #0f0a53;
+  background-color: #1f1f1f;
   color: #e0e0e0;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background: red;
+  background: #141414;
   position: sticky;
   width: 100%;
   z-index: 100;
@@ -75,7 +75,6 @@ header {
   padding: 1rem;
   border-radius: 4px;
 }
-
 .search-form input {
   padding: 0.5rem 1rem;
   width: 300px;
@@ -85,80 +84,49 @@ header {
   border-radius: 4px;
 }
 
-.language-selector {
-  position: relative;
-}
-
-.lang-toggle {
+.user-menu {
   background: none;
   border: none;
-  color: white;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
+  justify-content: center;
 }
-
-.lang-dropdown {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: rgba(0, 0, 0, 0.9);
-  list-style: none;
-  padding: 0.5rem 0;
-  border-radius: 4px;
-  display: none;
-  min-width: 120px;
-}
-
-.lang-dropdown a {
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  display: block;
-}
-
-.lang-dropdown a:hover {
-  background: #333;
-}
-
-.user-menu {
-  position: relative;
-}
-
-.user-avatar {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.user-avatar img {
+.user-menu img {
   width: 32px;
   height: 32px;
   border-radius: 4px;
+  margin-right: 7.5px;
+}
+.user-menu a:first-child {
+  margin-right: 7.5px;
 }
 
-.user-dropdown {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: rgba(0, 0, 0, 0.9);
-  list-style: none;
-  padding: 0.5rem 0;
-  border-radius: 4px;
-  display: none;
-  min-width: 150px;
+/* body */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  padding: 2rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-content: space-between;
 }
-
-.user-dropdown a {
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  display: block;
+@media screen and (max-width: 850px) {
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-
-.user-dropdown a:hover {
-  background: #333;
+.content-grid .content-card {
+  background-color: #3498db;
+  border-radius: 8px;
+}
+.content-grid .content-card img {
+  width: 100%;
+  max-height: 45vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
 }
 
 /* Footer Styles */
@@ -237,12 +205,6 @@ footer {
 .footer-legal {
   display: flex;
   gap: 1rem;
-}
-
-/* Show dropdowns on hover */
-.language-selector:hover .lang-dropdown,
-.user-menu:hover .user-dropdown {
-  display: block;
 }
 
 /* Responsive Adjustments */

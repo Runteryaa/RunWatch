@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="<%= locale %>">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <h1><%= __('Login') %></h1>
+        <form id="loginForm" method="POST" action="/login">
+            <label for="email"><%= __('Email') %></label>
+            <input type="email" name="email" id="email" required>
+            <label for="password"><%= __('Password') %></label>
+            <input type="password" name="password" id="password" required>
+            <button type="submit"><%= __('Login') %></button>
+        </form>
+        <p><%= __('Don\'t have an account?') %> <a href="/register"><%= __('Register') %></a></p>
+    </main>
+</body>
+</html>

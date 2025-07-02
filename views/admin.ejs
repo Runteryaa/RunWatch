@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="<%= locale %>">
+<head>
+    <%- include('partials/head', { title: 'Admin Panel', currentUrl: currentUrl }) %>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <h1>Admin Panel</h1>
+        <section>
+            <h2>Add New Film / Movie</h2>
+            <form id="addFilmForm" method="POST" action="/admin/films/add">
+                <label>Title: <input type="text" name="title" required></label><br>
+                <label>Description: <textarea name="description" required></textarea></label><br>
+                <label>Year: <input type="number" name="year" required></label><br>
+                <label>Rating: <input type="text" name="rating"></label><br>
+                <label>Thumbnail URL: <input type="text" name="thumbnail"></label><br>
+                <label>Video URL: <input type="text" name="videoUrl"></label><br>
+                <button type="submit">Add Film</button>
+            </form>
+        </section>
+        <section>
+            <h2>Add Season to Film</h2>
+            <form id="addSeasonForm" method="POST" action="/admin/seasons/add">
+                <label>Film ID: <input type="text" name="filmId" required></label><br>
+                <label>Season Number: <input type="number" name="seasonNumber" required></label><br>
+                <label>Season Title: <input type="text" name="seasonTitle"></label><br>
+                <button type="submit">Add Season</button>
+            </form>
+        </section>
+        <section>
+            <h2>Add Episode to Season</h2>
+            <form id="addEpisodeForm" method="POST" action="/admin/episodes/add">
+                <label>Film ID: <input type="text" name="filmId" required></label><br>
+                <label>Season Number: <input type="number" name="seasonNumber" required></label><br>
+                <label>Episode Number: <input type="number" name="episodeNumber" required></label><br>
+                <label>Episode Title: <input type="text" name="episodeTitle" required></label><br>
+                <label>Description: <textarea name="description"></textarea></label><br>
+                <label>Video URL: <input type="text" name="videoUrl"></label><br>
+                <button type="submit">Add Episode</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

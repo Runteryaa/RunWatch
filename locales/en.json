@@ -1,4 +1,25 @@
 {
   "error.404": "Page Not Found",
-  "page.home": "Home Page"
+  "navigation": "Navigation",
+  "home": "Home Page",
+  "movies": "Films",
+  "tvshows": "TV Shows",
+  "newreleases": "New Releases",
+  "legal": "Legal",
+  "privacy": "Privacy Policy",
+  "terms": "Terms and Conditions",
+  "cookie": "Cookie Policy",
+  "help": "Help",
+  "faq": "FAQ",
+  "contact": "Contact",
+  "feedback": "Feedback",
+  "followus": "Follow Us",
+  "copyright": "Copyright",
+  "sitemap": "Sitemap",
+  "about": "About",
+  "support": "Support",
+  "rights": "All rights reserved",
+  "profile": "Profile",
+  "login": "Login",
+  "register": "Register"
 }

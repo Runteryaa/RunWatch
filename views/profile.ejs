@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="<%= locale %>">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <h1><%= __('Profile') %></h1>
+        <% if (user) { %>
+            <p><strong><%= __('Display Name') %>:</strong> <%= user.displayName %></p>
+            <p><strong><%= __('Email') %>:</strong> <%= user.email %></p>
+            <p><strong><%= __('Joined') %>:</strong> <%= new Date(user.createdAt).toLocaleDateString() %></p>
+        <% } else { %>
+            <p><%= __('User not found.') %></p>
+        <% } %>
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+</html>
